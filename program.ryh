@@ -1,0 +1,7 @@
+@take smod!
+cover( );
+set x, y, result as int;
+ask("Enter first value: ") for x;
+ask("Enter second value: ") for y;
+add x to y = result;
+show result;
