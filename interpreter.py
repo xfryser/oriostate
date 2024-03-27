@@ -36,10 +36,12 @@ def execute_main(lines):
         # Check for arithmetic operation
         elif parts[0] == "add":
             try:
+                print("Before addition:", variables)
                 var1 = variables[parts[1]]
                 var2 = variables[parts[3]]
                 result = operator.add(var1, var2)
                 variables[parts[-1]] = result
+                print("After addition:", variables)
             except KeyError:
                 print("Error: Variable not declared.")
 
@@ -54,10 +56,10 @@ def execute_main(lines):
 def main():
     # Read code from file
     try:
-        with open("program.ryh", "r") as file:
+        with open("program.txt", "r") as file:
             lines = file.readlines()
     except FileNotFoundError:
-        print("Error: File 'program.ryh' not found.")
+        print("Error: File 'program.txt' not found.")
         return
 
     # Check for standard module inclusion
